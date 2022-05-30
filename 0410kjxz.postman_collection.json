@@ -1,0 +1,876 @@
+{
+	"info": {
+		"_postman_id": "69412f84-6f00-4908-a36d-b0e112cee01e",
+		"name": "0410kjxz",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16512043"
+	},
+	"item": [
+		{
+			"name": "登陆业务人员",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsondata = pm.response.json()",
+							"var yw_token = jsondata.data.kjxzToken",
+							"console.log(yw_token)",
+							"pm.globals.set(\"yw_Token\", yw_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userId\": \"000533\",\n\t\"password\": \"a2p4emtqeHpAMTIzNA==\"\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/user/userLogin",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"user",
+						"userLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "登陆产品经理",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsondata = pm.response.json()",
+							"var cp_token = jsondata.data.kjxzToken",
+							"console.log(cp_token)",
+							"pm.globals.set(\"cp_Token\", cp_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userId\": \"000531\",\n\t\"password\": \"a2p4emtqeHpAMTIzNA==\"\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/user/userLogin",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"user",
+						"userLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "登陆 开发人员",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsondata = pm.response.json()",
+							"var kf_token = jsondata.data.kjxzToken",
+							"console.log(kf_token)",
+							"pm.globals.set(\"kf_Token\", kf_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userId\": \"014118\",\n\t\"password\": \"a2p4emtqeHpAMTIzNA==\"\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/user/userLogin",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"user",
+						"userLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "创建需求",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsondata = pm.response.json()",
+							"var demend_id = jsondata.data",
+							"console.log(demend_id)",
+							"pm.globals.set(\"Demend_id\", demend_id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"summary\": \"{{name}}\",\n\t\"businessDirector\": \"000537\",\n\t\"priority\": \"P4\",\n\t\"wishDate\": \"2022-05-27\",\n\t\"subdivisionType\": \"1561086092149BO9BL\",\n\t\"importantDemand\": \"0\",\n\t\"groupId\": \"1\",\n\t\"isService\": \"0\",\n\t\"description\": \"<h3><strong><span style=\\\"font-size: 16px;\\\"><span style=\\\"line-height: 1.2;\\\">一、需求背景</span></span></strong></h3>\\n<p><em><span style=\\\"letter-spacing: 2px;\\\"><span style=\\\"font-size: 12px;\\\"><span style=\\\"line-height: 1.2;\\\">【填写需求背景:需求背景有助于各方了解需求的真实意图,可以填写例如:用户反馈截图,业务分析数据等】</span></span></span></em></p>\\n<h3><strong><span style=\\\"font-size: 16px;\\\"><span style=\\\"line-height: 1.2;\\\">二、需求内容</span></span></strong></h3>\\n<p><em><span style=\\\"letter-spacing: 2px;\\\"><span style=\\\"font-size: 12px;\\\"><span style=\\\"line-height: 1.2;\\\">【填写需求背描述:例如需求逻辑描述,流程图,线框图,页面实例等。需要描述清楚需求内容，经ＢＡ分析后可供开发评估可行性及大致开发难度及时间.需求的讨论逐渐补充完整】</span></span></span></em></p>\\n<h3><strong><span style=\\\"font-size: 16px;\\\"><span style=\\\"line-height: 1.2;\\\">三、技术实现</span></span></strong></h3>\\n<p><em><span style=\\\"letter-spacing: 2px;\\\"><span style=\\\"font-size: 12px;\\\"><span style=\\\"line-height: 1.2;\\\">【技术实现:技术实现方案包括内部和外部的依赖接口,由开发补充】</span></span></span></em></p>\\n<h3><strong><span style=\\\"font-size: 16px;\\\"><span style=\\\"line-height: 1.2;\\\">四、需求评审</span></span></strong></h3>\\n<p><span style=\\\"letter-spacing: 2px;\\\"><em><span style=\\\"font-size: 12px;\\\"><span style=\\\"line-height: 1.2;\\\">【补充是否需要评审,如果需要评审,这里需要补充评审会议纪要的链接】</span></span></em></span></p>\",\n\t\"gmId\": \"000537\",\n\t\"gmName\": \"张测试\",\n\t\"gmDeptId\": \"0212\",\n\t\"imageList\": [],\n\t\"fileList\": [],\n\t\"deptName\": \"信息技术部\",\n\t\"demandTypeName\": \"标准需求\",\n\t\"deptId\": \"0212\",\n\t\"demandId\": \"\",\n\t\"cacheType\": \"0\",\n\t\"userId\": \"000533\",\n\t\"userName\": \"测试97104\",\n\t\"demandTypeId\": \"4\",\n\t\"templateId\": \"101\"\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/demandsub/addDemandsub",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"demandsub",
+						"addDemandsub"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "讨论中",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "{{cp_Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"boardId\": \"1\",\n\t\"demandId\": \"{{Demend_id}}\",\n\t\"userId\": \"000531\",\n\t\"userName\": \"测试504517\"\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/discussNeed/updateDemandsubStatus",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"discussNeed",
+						"updateDemandsubStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "待拆封",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTE0NzQ1MjgsImV4cCI6MTY1NDA2NjUyOCwidXNlcklkIjoiMDAwNTMxIiwiaXNzIjoia2p4eiJ9.t8fOduEUpVYAPmZ7rtaCveU75sjrtEPC6DNqvD44pM4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"boardId\": \"3\",\n\t\"demandId\": \"{{Demend_id}}\",\n\t\"userId\": \"000531\",\n\t\"userName\": \"测试504517\"\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/discussNeed/updateDemandsubStatus",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"discussNeed",
+						"updateDemandsubStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新建story",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsondata = pm.response.json()",
+							"var story_id = jsondata.data[0].id",
+							"console.log(story_id)",
+							"pm.globals.set(\"Story_id\", story_id);",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data.sId).to.eql(null);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTE0NzQ1MjgsImV4cCI6MTY1NDA2NjUyOCwidXNlcklkIjoiMDAwNTMxIiwiaXNzIjoia2p4eiJ9.t8fOduEUpVYAPmZ7rtaCveU75sjrtEPC6DNqvD44pM4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"summary\": \"{{name}}\",\n\t\"productId\": null,\n\t\"bindVersionId\": null,\n\t\"moduleId\": [],\n\t\"deptName\": \"信息技术部\",\n\t\"tId\": \"13887408591786H7NJ\",\n\t\"projectId\": \"1558332722467QOIDU\",\n\t\"systemId\": \"1428915206773G2OFG\",\n\t\"bchildTypeCode\": \"1000021\",\n\t\"priority\": \"P4\",\n\t\"itDuedate\": \"2022-05-31\",\n\t\"developDate\": \"4\",\n\t\"testDate\": \"1.3\",\n\t\"fieldName_816\": null,\n\t\"systemModuleId\": \"16\",\n\t\"tName\": \"移动平台组\",\n\t\"description\": \"<p>213213</p>\",\n\t\"imageList\": [],\n\t\"fileList\": [],\n\t\"deptId\": \"0212\",\n\t\"systemModuleName\": \"其他\",\n\t\"itpmProjectId\": \"1558332722467QOIDU\",\n\t\"projectName\": \"移动平台组虚拟项目\",\n\t\"systemName\": \"君弘\",\n\t\"userId\": \"000531\",\n\t\"userName\": \"测试504517\",\n\t\"sonUserId\": \"000531\",\n\t\"sonUserName\": \"测试504517\",\n\t\"oaCode\": \"qiujing\",\n\t\"demandId\": \"{{Demend_id}}\",\n\t\"templateId\": \"101\",\n\t\"isSplit\": \"0\"\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/demandsub/addDemandsubJira",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"demandsub",
+						"addDemandsubJira"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "技术评估",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTE0NzQ1MjgsImV4cCI6MTY1NDA2NjUyOCwidXNlcklkIjoiMDAwNTMxIiwiaXNzIjoia2p4eiJ9.t8fOduEUpVYAPmZ7rtaCveU75sjrtEPC6DNqvD44pM4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"demandId\": \"{{Demend_id}}\",\n\t\"userName\": \"测试504517\",\n\t\"userId\": \"000531\",\n\t\"companyId\": \"comp01\",\n\t\"subsetList\": []\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/demandsub/sendMessageToPerson",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"demandsub",
+						"sendMessageToPerson"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "同步开发",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTE0NzQ1MjgsImV4cCI6MTY1NDA2NjUyOCwidXNlcklkIjoiMDAwNTMxIiwiaXNzIjoia2p4eiJ9.t8fOduEUpVYAPmZ7rtaCveU75sjrtEPC6DNqvD44pM4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"{{Story_id}}\",\n\t\"isSplit\": \"1\",\n\t\"companyId\": \"comp01\",\n\t\"userId\": \"000531\",\n\t\"userName\": \"测试504517\",\n\t\"deptId\": \"0212\"\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/demandsub/sysDemandsubJira",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"demandsub",
+						"sysDemandsubJira"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新建task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "{{kf_Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"testAppointNo\": \"015073\",\n\t\"taskNo\": \"\",\n\t\"taskTitle\": \"{{name}}\",\n\t\"createTime\": \"\",\n\t\"testEnvironmentComplicacy\": \"0\",\n\t\"taskType\": 1,\n\t\"devType\": 2,\n\t\"taskLevel\": \"P4\",\n\t\"devAppoint\": \"张禄旭-014118\",\n\t\"devPlanWorkload\": \"4\",\n\t\"devAssessDateStart\": \"2022-05-19 10:51:53\",\n\t\"devAssessDateEnd\": \"2022-05-23 10:52:01\",\n\t\"testAppoint\": \"谷丽丽-015073\",\n\t\"testPlanWorkload\": \"3\",\n\t\"testAssessDateStart\": \"2022-05-24 10:52:08\",\n\t\"testAssessDateEnd\": \"2022-05-26 10:52:16\",\n\t\"systemModuleId\": 16,\n\t\"taskDesc\": \"<p>213213</p>\",\n\t\"pageNum\": 1,\n\t\"apiNum\": 1,\n\t\"logicalBlockNum\": 1,\n\t\"devHeaderNo\": \"014118\",\n\t\"devHeaderName\": \"张禄旭\",\n\t\"testHeaderNo\": \"015073\",\n\t\"testHeaderName\": \"谷丽丽\",\n\t\"testAppointName\": \"谷丽丽\",\n\t\"devAppointName\": \"张禄旭\",\n\t\"devAppointNo\": \"014118\",\n\t\"id\": \"\",\n\t\"fileLinks\": \"[]\",\n\t\"systemId\": \"1428915206773G2OFG\",\n\t\"funNum\": \"8\",\n\t\"ae\": \"2.9\",\n\t\"systemModuleName\": \"其他\",\n\t\"customFieldMap\": {},\n\t\"storyNo\": \"{{Story_id}}\"\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/stcpstory/task/save",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"stcpstory",
+						"task",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "捕获task ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsondata = pm.response.json()",
+							"var task_id = jsondata.data[1].taskKanBanVOList[0].id",
+							"console.log(task_id)",
+							"pm.globals.set(\"Task_id\",task_id)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTMwMjgxMDUsImV4cCI6MTY1NTYyMDEwNSwidXNlcklkIjoiMDE0MTE4IiwiaXNzIjoia2p4eiJ9._bNXSWfR0kEiubXWsVuVrbtUWRi-L_6z44Mn5gMnYzI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"systemId\": \"myGroup\",\n\t\"teamId\": \"myGroup\",\n\t\"taskTitle\": \"{{name}}\",\n\t\"searchKey\": \"myGroup\",\n\t\"condId\": 204,\n\t\"pageSize\": 99999,\n\t\"currentPage\": 1\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/stcpstory/task/board",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"stcpstory",
+						"task",
+						"board"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "开始开发",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTMwMjgxMDUsImV4cCI6MTY1NTYyMDEwNSwidXNlcklkIjoiMDE0MTE4IiwiaXNzIjoia2p4eiJ9._bNXSWfR0kEiubXWsVuVrbtUWRi-L_6z44Mn5gMnYzI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"flagFn\": \"1\",\n\t\"devDateStart\": \"2022-05-21\",\n\t\"testDateStart\": \"\",\n\t\"devAppointNo\": \"014118\",\n\t\"reason\": \"\",\n\t\"approve\": 1,\n\t\"taskId\": {{Task_id}},\n\t\"storyNo\": \"{{Story_id}}\",\n\t\"statusCode\": 1,\n\t\"statusName\": \"待开发\"\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/stcpstory/task/update/status",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"stcpstory",
+						"task",
+						"update",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "完成开发",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTMwMjgxMDUsImV4cCI6MTY1NTYyMDEwNSwidXNlcklkIjoiMDE0MTE4IiwiaXNzIjoia2p4eiJ9._bNXSWfR0kEiubXWsVuVrbtUWRi-L_6z44Mn5gMnYzI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"flagFn\": \"2\",\n\t\"devDateStart\": \"2022-05-21\",\n\t\"testDateStart\": \"\",\n\t\"devAppointNo\": \"014118\",\n\t\"reason\": \"\",\n\t\"approve\": 1,\n\t\"taskId\": {{Task_id}},\n\t\"storyNo\": \"{{Story_id}}\",\n\t\"devDateStartFn\": \"2022-05-21\",\n\t\"devWorkload\": \"2\",\n\t\"devDateEnda\": \"2022-05-21\",\n\t\"statusCode\": 2,\n\t\"statusName\": \"开发中\",\n\t\"devDateEnd\": \"2022-05-21\",\n\t\"testDateEnd\": \"2022-05-21\"\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/stcpstory/task/update/status",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"stcpstory",
+						"task",
+						"update",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "开始测试",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTMwMjgxMDUsImV4cCI6MTY1NTYyMDEwNSwidXNlcklkIjoiMDE0MTE4IiwiaXNzIjoia2p4eiJ9._bNXSWfR0kEiubXWsVuVrbtUWRi-L_6z44Mn5gMnYzI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"flagFn\": \"3\",\n\t\"devDateStart\": \"\",\n\t\"testDateStart\": \"2022-05-21\",\n\t\"testAppointNo\": \"015073\",\n\t\"reason\": \"\",\n\t\"approve\": 1,\n\t\"taskId\": {{Task_id}},\n\t\"storyNo\": \"{{Story_id}}\",\n\t\"statusCode\": 3,\n\t\"statusName\": \"待测试\"\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/stcpstory/task/update/status",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"stcpstory",
+						"task",
+						"update",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "完成测试",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTMwMjgxMDUsImV4cCI6MTY1NTYyMDEwNSwidXNlcklkIjoiMDE0MTE4IiwiaXNzIjoia2p4eiJ9._bNXSWfR0kEiubXWsVuVrbtUWRi-L_6z44Mn5gMnYzI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"flagFn\": \"4\",\n\t\"devDateStart\": \"\",\n\t\"testDateStart\": \"\",\n\t\"testAppointNo\": \"015073\",\n\t\"reason\": \"\",\n\t\"approve\": 1,\n\t\"taskId\": {{Task_id}},\n\t\"storyNo\": \"{{Story_id}}\",\n\t\"devWorkload\": 2,\n\t\"testDateEnd\": \"2022-05-21\",\n\t\"testWorkload\": \"2\",\n\t\"testEnvironmentComplicacy\": \"0\",\n\t\"testEnvironment\": \"123123\",\n\t\"statusCode\": 4,\n\t\"statusName\": \"测试中\",\n\t\"devDateEnd\": \"2022-05-21\"\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/stcpstory/task/update/status",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"stcpstory",
+						"task",
+						"update",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "业务验收",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "{{yw_Token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"storyId\": \"{{Story_id}}\",\n\t\"status\": \"1\",\n\t\"devHeaderId\": \"014118\",\n\t\"devHeaderName\": \"测试699254\",\n\t\"remark\": \"\",\n\t\"reason\": \"\",\n\t\"summary\": \"{{name}}\"\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/discussNeed/checkPhase",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"discussNeed",
+						"checkPhase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "完成集成",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTMwMjgxMDUsImV4cCI6MTY1NTYyMDEwNSwidXNlcklkIjoiMDE0MTE4IiwiaXNzIjoia2p4eiJ9._bNXSWfR0kEiubXWsVuVrbtUWRi-L_6z44Mn5gMnYzI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/taskFlow/updateStoryAndTaskStatus?storyNo={{Story_id}}&taskId={{Task_id}}",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"taskFlow",
+						"updateStoryAndTaskStatus"
+					],
+					"query": [
+						{
+							"key": "storyNo",
+							"value": "{{Story_id}}"
+						},
+						{
+							"key": "taskId",
+							"value": "{{Task_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "开始集成测试",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTMwMjgxMDUsImV4cCI6MTY1NTYyMDEwNSwidXNlcklkIjoiMDE0MTE4IiwiaXNzIjoia2p4eiJ9._bNXSWfR0kEiubXWsVuVrbtUWRi-L_6z44Mn5gMnYzI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"flagFn\": 1,\n\t\"devDateStart\": \"\",\n\t\"testDateStart\": \"\",\n\t\"reason\": \"\",\n\t\"approve\": 1,\n\t\"taskId\": {{Task_id}},\n\t\"storyNo\": \"{{Story_id}}\",\n\t\"statusCode\": 12,\n\t\"statusName\": \"已集成\"\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/stcpstory/task/update/status",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"stcpstory",
+						"task",
+						"update",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "完成集成测试",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTMwMjgxMDUsImV4cCI6MTY1NTYyMDEwNSwidXNlcklkIjoiMDE0MTE4IiwiaXNzIjoia2p4eiJ9._bNXSWfR0kEiubXWsVuVrbtUWRi-L_6z44Mn5gMnYzI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"flagFn\": 1,\n\t\"devDateStart\": \"\",\n\t\"testDateStart\": \"\",\n\t\"reason\": \"\",\n\t\"approve\": 1,\n\t\"taskId\": {{Task_id}},\n\t\"storyNo\": \"{{Story_id}}\",\n\t\"statusCode\": 8,\n\t\"statusName\": \"集成测试中\"\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/stcpstory/task/update/status",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"stcpstory",
+						"task",
+						"update",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "开始上线",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTMwMjgxMDUsImV4cCI6MTY1NTYyMDEwNSwidXNlcklkIjoiMDE0MTE4IiwiaXNzIjoia2p4eiJ9._bNXSWfR0kEiubXWsVuVrbtUWRi-L_6z44Mn5gMnYzI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"flagFn\": 1,\n\t\"devDateStart\": \"\",\n\t\"testDateStart\": \"\",\n\t\"reason\": \"\",\n\t\"approve\": 1,\n\t\"taskId\": {{Task_id}},\n\t\"storyNo\": \"{{Story_id}}\",\n\t\"statusCode\": 9,\n\t\"statusName\": \"待上线\"\n}"
+				},
+				"url": {
+					"raw": "http://120.48.0.142:9060/server/stcpstory/task/update/status",
+					"protocol": "http",
+					"host": [
+						"120",
+						"48",
+						"0",
+						"142"
+					],
+					"port": "9060",
+					"path": [
+						"server",
+						"stcpstory",
+						"task",
+						"update",
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
